@@ -97,7 +97,7 @@ button:hover {
 
 .table th,
 .table td {
-  padding: 12px;
+  padding: 8px;
   text-align: left;
 }
 
@@ -118,7 +118,9 @@ button:hover {
 .table td button {
   padding: 6px 12px;
 }
-
+.table td p {
+  width: 100px;
+}
 .table input[type="number"],
 .table select,
 .table input[type="date"] {
