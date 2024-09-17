@@ -15,7 +15,12 @@ let expenses =
     ? []
     : JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_EXPENSE_ITEM));
 
-let income = 100;
+let income =
+  localStorage.getItem(LOCAL_STORAGE_KEY_INCOME) == null
+    ? 0
+    : parseFloat(
+        JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_INCOME))
+      ).toFixed(2);
 headerIncome.innerHTML = income;
 renderExpense();
 
@@ -174,12 +179,22 @@ function updateHeaders() {
     document.getElementById("header--difference").style.color = "#32CD32";
   } else {
     headerDifference.style.color = "#B22222";
-    headerDifference.innerHTML = `-$${Math.abs(difference)}`;
+    headerDifference.innerHTML = `-$${Math.abs(difference).toFixed(2)}`;
     document.getElementById("header--difference").style.color = "#B22222";
   }
 }
 
 function updateIncome() {
-  headerIncome.innerHTML = prompt("Enter the new income amount in US Dollar");
+  let userInput = prompt("Enter the new income amount in US Dollar");
+  while (
+    isNaN(parseFloat(userInput)) ||
+    userInput === null ||
+    userInput.trim() === ""
+  ) {
+    userInput = prompt(
+      "Please enter a valid number for the new income amount in US Dollar"
+    );
+  }
+  headerIncome.innerHTML = `${parseFloat(userInput).toFixed(2)}`;
   saveExpense();
 }
