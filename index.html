@@ -10,11 +10,13 @@
   <body>
     <div class="container" id="container">
       <div class="container__header">
-        <h1 class="header__total" id="header--total">Expense: $245</h1>
-        <h1 class="header__income">Income: $<span>100</span></h1>
-        <h1 class="header__difference" id="header--difference">
-          Result: <span>0.00</span>
-        </h1>
+        <div class="headers">
+          <h1 class="header__total" id="header--total">Expense: $245</h1>
+          <h1 class="header__income">Income: $<span>100</span></h1>
+          <h1 class="header__difference" id="header--difference">
+            Balance: <span>0.00</span>
+          </h1>
+        </div>
         <button id="update--income">Update Income</button>
       </div>
       <form class="form" id="form">
@@ -30,7 +32,7 @@
         <label for="form--amount">Amount</label>
         <input
           type="number"
-          placeholder="Enter the amount in US Dollar"
+          placeholder="Amount in USA $"
           class="form__amount"
           id="form--amount"
         />
@@ -38,12 +40,14 @@
         <label for="form--date">Date</label>
         <input type="date" class="form__date" id="form--date" />
 
-        <button type="submit" class="form__button" id="form--button">
-          Add Expense
-        </button>
+        <div class="form__button--container">
+          <button type="submit" class="form__button" id="form--button">
+            Add Expense
+          </button>
+        </div>
       </form>
       <div class="table__container">
-        <table class="styled-table">
+        <table class="table">
           <thead>
             <tr>
               <th>Category</th>

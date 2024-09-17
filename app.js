@@ -15,10 +15,7 @@ let expenses =
     ? []
     : JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_EXPENSE_ITEM));
 
-let income =
-  localStorage.getItem(LOCAL_STORAGE_KEY_INCOME) == null
-    ? 0
-    : JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_INCOME));
+let income = 100;
 headerIncome.innerHTML = income;
 renderExpense();
 
@@ -172,13 +169,13 @@ function updateHeaders() {
   headerTotal.innerHTML = `Expense: $${totalExpense.toFixed(2)}`; // Display total in the header
   let difference = parseFloat(headerIncome.innerHTML) - totalExpense;
   if (difference >= 0) {
-    headerDifference.style.color = "green";
+    headerDifference.style.color = "#32CD32";
     headerDifference.innerHTML = `$${difference}`;
-    document.getElementById("header--difference").style.color = "green";
+    document.getElementById("header--difference").style.color = "#32CD32";
   } else {
-    headerDifference.style.color = "red";
+    headerDifference.style.color = "#B22222";
     headerDifference.innerHTML = `-$${Math.abs(difference)}`;
-    document.getElementById("header--difference").style.color = "red";
+    document.getElementById("header--difference").style.color = "#B22222";
   }
 }
 
