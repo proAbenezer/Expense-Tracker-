@@ -17,7 +17,7 @@ let expenses =
 
 let income =
   localStorage.getItem(LOCAL_STORAGE_KEY_INCOME) == null
-    ? 0
+    ? (0).toFixed(2)
     : parseFloat(
         JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_INCOME))
       ).toFixed(2);
