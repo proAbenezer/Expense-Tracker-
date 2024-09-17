@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  background-color: #eee;
+}
+
+.styled-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.styled-table th,
+.styled-table td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: left;
+}
+
+.styled-table th {
+  background-color: #f2f2f2;
+}
+tr:nth-child(even) {
+  background-color: #d6eeee;
+}
+
+.container {
+  margin-top: 100px;
+}
+
+.container__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 6em;
+  margin-bottom: 80px;
+  background-color: tan;
+  padding: 1em 2em;
+  border-radius: 20px;
+}
+.header__total {
+  color: aquamarine;
+}
+
+.header__income {
+  color: rgb(109, 36, 51);
+}
+.header__difference {
+  color: red;
+}
+input,
+select,
+button {
+  padding: 6px 12px;
+}
+.form {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+td button {
+  margin-left: 20px;
+}
+
+.table__container {
+  height: 62vh;
+  overflow: scroll;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}

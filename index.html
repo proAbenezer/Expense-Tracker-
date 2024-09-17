@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="container__header">
+        <h1 class="header__total" id="header--total">Expense: $245</h1>
+        <h1 class="header__income">Income: $<span>100</span></h1>
+        <h1 class="header__difference" id="header--difference">
+          Result: <span>0.00</span>
+        </h1>
+        <button id="update--income">Update Income</button>
+      </div>
+      <form class="form" id="form">
+        <label for="form--select">Category</label>
+        <select name="options" class="form__select" id="form--select">
+          <option value="Food">Food</option>
+          <option value="Transporation">Transporation</option>
+          <option value="Relaxtion">Relaxtion</option>
+          <option value="Rent">Rent</option>
+          <option value="Others">Others</option>
+        </select>
+
+        <label for="form--amount">Amount</label>
+        <input
+          type="number"
+          placeholder="Enter the amount in US Dollar"
+          class="form__amount"
+          id="form--amount"
+        />
+
+        <label for="form--date">Date</label>
+        <input type="date" class="form__date" id="form--date" />
+
+        <button type="submit" class="form__button" id="form--button">
+          Add Expense
+        </button>
+      </form>
+      <div class="table__container">
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Amount</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="table--body">
+            <tr>
+              <td>Food</td>
+              <td>$129</td>
+              <td>19/2/2024</td>
+              <td>
+                <button class="table__button">Delete</button>
+                <button class="table__button">Edit</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
